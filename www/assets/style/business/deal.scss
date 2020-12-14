@@ -1,0 +1,490 @@
+/* 交易类控制台的样式 */
+
+
+.color-bg {
+    background-color: #000000e6;
+    padding-top: 20px;
+    height: 100vh;
+
+    .main-area {
+        // margin-top: 20px;
+    }
+
+    .header {
+        background-color: #fff;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        font-weight: bold;
+        font-size: 15px;
+
+        .button {
+            font-size: 20px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .situation-panel {
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+
+        .table-data-area {
+            position: relative;
+            width: 100%;
+            height: 380px;
+        }
+
+        .menus {
+            margin-top: auto;
+            display: flex;
+            height: 28px;
+            margin-top:25px;
+            background-color: #181818;
+
+            > div {
+                user-select: none;
+                color: #fff;
+                font-size: 13px;
+                padding: 0 15px;
+                line-height: 28px;
+                position: relative;
+                cursor: pointer;
+
+                &:last-child::after {
+                    height: 0;
+                }
+
+                &::after {
+                    height: 60%;
+                    width: 1px;
+                    background-color: #ddd;
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 7px;
+                }
+
+                &.active {
+                    color: #6580f6;
+                }
+            }
+        }
+    }
+
+    .operate-area {
+        display: flex;
+        height: 420px;
+
+        .part1 {
+            width: 440px;
+            border-right: 1px solid #ddd;
+
+        }
+
+        .part2 {
+            width: calc(100% - 440px);
+            .hbb-wrap{
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                height:150px;
+                //overflow: hidden;
+                .el-table td, .el-table th{
+                    padding: 0;
+                }
+
+                &.hbb-wrap1{
+                    height: 230px !important;
+                    position: relative;
+                    margin-top: 40px;
+                    .hbb-w-btn{
+                        position: absolute;
+                        width: 100%;
+                        height: 40px;
+                        bottom: 0;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0 10px;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.part-content {
+    padding-top: 5px;
+    padding-left: 10px;
+
+    .menu-line {
+        display: flex;
+        margin-bottom: 10px;
+
+        .title-cap {
+            width: 40px;
+            line-height: 42px;
+        }
+        .title-input{
+            border: 1px solid #ccc;
+            position: relative;
+            span{
+                float: left;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                font-size: 30px;
+                color:#ccc;
+                cursor: pointer;
+            }
+            &>.el-input{
+                float: left;
+                padding: 0 !important;
+                &>.el-input__inner{
+                    border-top:0 !important;
+                    border-bottom:0 !important;
+                    border-radius: 0 !important
+                }
+            }
+            .hbb-popup{
+                position: absolute;
+                width: 140%;
+                height: auto;
+                top: 40px;
+                left: 0;
+                background: #efefef;
+                border: 1px solid #ccc;
+                border-bottom: 0;
+                z-index: 9;
+            }
+
+        }
+        .up {
+            color: $color-up;
+        }
+
+        .down {
+            color: $color-down;
+        }
+    }
+
+    .btn-tb {
+        background-color: #fff0ef;
+        width: 40px;
+        padding: 0;
+        border: none;
+    }
+}
+
+.main-area {
+    width: 1230px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.wrap-menus {
+    line-height: 0;
+    padding-left: 2px;
+
+    button {
+        font-size: 14px;
+        width: 100px;
+        height: 22px;
+        line-height: 22px;
+        background-color: #f6f6f6;
+        margin: 1px;
+        border: 1px solid #ddd;
+        color: #333;
+        border-radius: 0;
+        padding: 0;
+
+        &:hover {
+            color: #333;
+        }
+
+        &.active {
+            background-color: #fff;
+            border-bottom: none;
+            border-top: 2px solid #006bcb;
+        }
+    }
+}
+.hbb-ping{
+    background: #7EC2FF;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 4px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.hbb-che{
+    background: #FFA7A2;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 4px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/deep/ .contract-table {
+    padding-left: 10px;
+    padding-right: 10px;
+    .el-table__body-wrapper {
+        height:100% !important;
+    }
+    .el-table__empty-text {
+        color: #fff;
+    }
+
+    .el-table {
+        &::before {
+            height: 0;
+        }
+
+        &::after {
+            width: 0;
+        }
+
+        border: none;
+        background-color: transparent;
+
+        .value {
+            float: left;
+            width: 100%;
+            color: #ff0;
+
+            &.white {
+                color: #fff;
+            }
+
+            &.up {
+                color: #ff3232;
+
+                &.top { /* 涨停 红底白字*/
+                    background-color: #ff3232;
+                    color: #fff;
+                    border-bottom: 1px solid #000;
+                }
+            }
+
+            &.down {
+                color: #00e700;
+
+                &.top { /* 跌停 绿色底白字*/
+                    background-color: #00e700;
+                    color: #fff;
+                    border-bottom: 1px solid #000;
+                }
+            }
+        }
+    }
+
+    .el-table tr {
+        cursor: pointer;
+        position: relative;
+        background-color: transparent;
+
+        th {
+            background-color: transparent;
+            border: none;
+            padding: 0 0;
+            min-width: 60px;
+
+            > .cell {
+                color: #0ff;
+                padding-left: 5px;
+                padding-right: 0;
+            }
+        }
+
+        td {
+            width: auto;
+            border: none;
+            padding: 2px 0;
+            > .cell {
+                color: #ff0;
+                padding-left: 5px;
+                padding-right: 0;
+            }
+        }
+
+        &.current-row,
+        &:hover {
+            background-color: #333;
+
+            td {
+                background-color: transparent;
+            }
+        }
+
+        th.is-left {
+            border: none;
+            text-align: right;
+        }
+    }
+
+}
+
+.manual-deal {
+    .top-part {
+        display: flex;
+        padding-bottom: 10px;
+        margin: 10px 0;
+        border-bottom: 1px solid #eaeaea;
+
+        .times-right {
+            margin-left: 18px;
+            padding-left: 18px;
+            padding-right: 18px;
+            width: 100%;
+
+            &.up .value {
+                color: $color-up;
+            }
+
+            &.down .value {
+                color: $color-down;
+            }
+
+            .buysell.up {
+                color: $color-up;
+            }
+
+            .buysell.down {
+                color: $color-down;
+            }
+
+            .now-value {
+                padding-bottom: 10px;
+                font-size: 15px;
+                display: flex;
+                justify-content: space-between;
+
+                &.border-bottom {
+                    border-bottom: 1px solid #eaeaea;
+                }
+
+            }
+
+            .money-value {
+                padding-top: 15px;
+
+                .title {
+                    color: #0086ff;
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+
+                .number {
+                    margin-bottom: 10px;
+                }
+            }
+
+            border-left: 1px solid #eaeaea;
+        }
+    }
+
+    .operate-section {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        margin-right: 15px;
+
+        > div {
+            flex: 1;
+
+            &:nth-child(2) {
+                margin: 0 10px;
+            }
+        }
+
+        .btn {
+            span{
+                color: #fff;
+            }
+            &.buy {
+                background-color: #ff4338;
+            }
+
+            &.sell {
+                background-color: #00b600;
+            }
+
+            &.ping {
+                background-color: #299aff;
+
+                &.noBg{
+                    background-color: #ccc;
+                }
+            }
+
+            width: 100%;
+            height: 64px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            margin: 0;
+
+            > p {
+                color: #fff;
+
+                &:first-child {
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
+
+                &:last-child {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .amount {
+            background-color: #f2f2f2;
+            margin-top: 2px;
+            line-height: 30px;
+            color: #999;
+
+            .color {
+                color: #0086ff;
+            }
+        }
+    }
+}
+.hbb-table{
+    th>.cell,td>.cell{
+        font-weight: normal !important;
+        font-size: 12px;
+    }
+    .el-table__body-wrapper{
+        height: 140px !important;
+        overflow: auto;
+    }
+}
+.hbb-cheBtn{
+    background: #f00 !important;
+    padding: 3px 0;
+    line-height: 0;
+    float: right !important;
+    border: none;
+}
+

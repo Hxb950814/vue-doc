@@ -1,0 +1,28 @@
+.el-image-viewer__close{
+    .el-icon-circle-close{
+        font-size: 40px;
+    }
+
+    color: #fff;
+}
+.el-table {
+    .cell{
+        font-weight: normal;
+    }
+}
+.hbb-strategySelect{
+    .el-select-dropdown__item{
+        span{
+            color: #ff2f2f !important;
+        }
+
+    }
+}
+.el-input__suffix-inner{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    i{
+        font-style: normal;
+    }
+}

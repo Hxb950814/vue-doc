@@ -1,0 +1,26 @@
+{
+    "name": "fushui-common",
+    "version": "1.0.0",
+    "description": "fushui common project",
+    "scripts": {
+        "build": "node scripts/build.js",
+        "lint": "eslint src/** --fix"
+    },
+    "dependencies": {
+        "@types/pako": "^1.0.1",
+        "pako": "^1.0.1",
+        "await-to-js": "^2.1.1",
+        "lodash-es": "^4.17.15",
+        "dayjs": "^1.8.27"
+    },
+    "devDependencies": {
+        "typescript": "~3.8.3"
+    },
+    "module": "src",
+    "main": "lib/index.js",
+    "files": [],
+    "types": "lib/index.d.ts",
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

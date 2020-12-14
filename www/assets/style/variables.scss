@@ -1,0 +1,40 @@
+$common-bg-color : #f6f6f6; //基础背景色颜色
+
+$base-font-size : 14PX; //基础字体大小
+$base-font-color : #333; //基础字体颜色
+
+$color-main: #0086ff;; // 主颜色
+$color-danger: #ff1a02;; // 主颜色
+$color-gray: #999; // 灰色
+$color-up: #ff1a02; // 上涨红色
+$color-down: #03b602; // 下跌绿色
+$color-disabled: #ccc; // 禁用颜色
+
+$color-dark-bg: #181818; // 黑色主题 nav
+
+$color-text-dark: #e4ab40; // 深色版文字颜色
+$color-text-light: #fde543; // 浅色版文字颜色
+
+$max-screen-width: 750px; // 屏幕设计最宽
+$header-height: 60px;  // 导航栏高度
+$footer-height: 270px;  // footer高度
+$main-height: calc(100vh - #{$footer-height});
+
+$input-height: 40px; // input高度
+$input-radius: 3px; // input radius
+
+/*zindex*/
+$z-index-header: 100; /*header*/
+
+$z-sign-mask: 20010; /* 签到层 */
+$z-mask: 20000; /* 签到层 */
+
+$z-index-loading: 30010; /*loading*/
+$z-index-toast: 30020; /*toast*/
+$z-index-msgbox: 30010; /*msgbox*/
+
+
+
+$cdn-path: 'https://rs.tanxingk.com';
+
+$width-visual-area: 1200px;
