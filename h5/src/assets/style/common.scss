@@ -1,0 +1,222 @@
+body,
+html {
+  height: 100%;
+  background: #fff;
+}
+#app {
+  width: 100%;
+  height: 100%;
+}
+body,ul,p,h2,image, input,div{
+  margin:0;
+  border: 0;
+  padding: 0;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+body{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+a:focus,
+input:focus,
+//p:focus,
+//div:focus{
+//    -webkit-tap-highlight-color:rgba(0,0,0,0);
+//    -webkit-user-modify:read-write-plaintext-only;
+//}
+* {
+  box-sizing: border-box;
+}
+ul{
+  list-style: none;
+}
+.pageBox{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+// 自定义样式  【多个地方使用】
+.hbb-listen-detail-bottom {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 28px 28px 0px 0px;
+    margin-top: -20px;
+    overflow: hidden;
+
+    .van-tabs {
+        width: 100%;
+
+        .van-tabs__wrap {
+            height: 90px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .van-tab {
+            width: 160px !important;
+            padding: 0 !important;
+            height: 90px !important;
+            font-size: 28px !important;
+            color: $color-666 !important;
+            padding-top: 40px;
+            margin-right: 20px;
+            &:nth-of-type(1){
+                font-size: 32px !important;;
+            }
+            .van-tab__text--ellipsis {
+                overflow: inherit !important;
+            }
+
+            &.van-tab--active {
+                color: $base-font-color !important;
+                font-weight: bold !important;
+                z-index: 3;
+                font-size: 30px !important;
+            }
+        }
+
+        .van-tabs__line {
+            width: 118px !important;
+            height: 16px !important;
+            background-color: #ffc000;
+            border-radius: 8px;
+        }
+    }
+
+    .van-tabs__content {
+        margin-top: 20px;
+    }
+}
+
+// 定义tab的width
+.hbb-all-nav {
+    display: flex;
+    width: 100%;
+    padding:0 30px;
+    margin-top: 25px;
+    .van-tabs {
+        width: 100%;
+        .van-tab {
+            width: 160px !important;
+            padding: 0 !important;
+            height: 40px !important;
+            font-size: 28px !important;
+            color: $base-font-color !important;
+            margin-right: 20px;
+            justify-content: flex-start;
+            &:nth-of-type(1){
+                font-size: 32px !important;;
+            }
+            .van-tab__text--ellipsis {
+                overflow: inherit !important;
+                height: 100% !important;
+                display: flex !important;
+                align-items: center !important;
+            }
+
+
+            &.van-tab--active {
+                color: $color-main !important;
+                .van-tab__text--ellipsis{
+                    border-bottom: 4px solid #ee0a24 !important;
+                }
+
+            }
+        }
+
+        .van-tabs__line {
+            display: none !important;
+            width: 112px !important;
+            height: 4px !important;
+        }
+    }
+
+    .van-tabs__content {
+        margin-top: 20px;
+    }
+}
+// 自定义样式 【页面无法覆盖】
+.hbb-fff{
+    .van-checkbox__label{
+        color: #fff !important;
+    }
+}
+.hbb-vanbutton{
+    background: url(../../assets/images/buttonbuy1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 80px;
+    width: 100%;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    &.hbb-vanbutton1{
+        opacity: 0.3;
+    }
+    .van-button--default{
+        width: 100%;
+        flex: 1 0 0%;
+        height: 100%;
+        font-size: 30px;
+        background: none !important;
+        border: none !important;
+        color: #fff;
+    }
+}
+.hbb-close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.hbb-noData{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+   align-items: center;
+    height: 200px;
+    margin-top: 20px;
+    justify-content: center;
+    color: #bbb;
+}
+
+.hbb-scoller-content {
+    height: 100vh !important;
+}
+
+.takeout-box{
+    .scroller-box{
+        padding: 0 30px;
+    }
+}
+.hbb-content{
+    position: relative;
+    display: flex;
+    .takeout-box{
+        .scroller-box{
+            padding: 0 !important;
+        }
+    }
+}
+.hbb-coupon-info{
+    ._v-container{
+        background: #fff !important;
+        top: 30px !important;
+        height: calc(100vh - 70px) !important;
+    }
+}
+.hbb-invite-modal{
+    .van-popup{
+        background: none !important;
+        overflow-y: inherit !important;
+    }
+}
+//.hbb-scoller-content {
+//    height: 100vh !important;
+//}

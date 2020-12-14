@@ -1,0 +1,766 @@
+/* 行情专用的scss */
+
+$menu-title-width: 290px;
+$menu-tab1-width: 140px;
+$menu-tab2-width: 160px;
+$menu-tab3-width: 160px;
+
+.situation-top-flag{
+    background: #f2f2f2;
+    height: 70px;
+    display: flex;
+    padding: 0 0;
+    justify-content: space-between;
+    user-select: none;
+    >div{
+        line-height: 70px;
+        font-size: 30px;
+        color: #666;
+    }
+    .title{
+        width: $menu-title-width;
+        padding-left: 20px;
+    }
+    .menu-1{
+        width: $menu-tab1-width;
+        padding-right: 10px;
+        text-align: right;
+        position: relative;
+    }
+    .menu-2{
+        width: $menu-tab2-width;
+        padding-right: 10px;
+        text-align: right;
+        position: relative;
+    }
+    .menu-3{
+        width: $menu-tab3-width;
+        padding-right: 20px;
+        position: relative;
+        text-align: right;
+    }
+    .menu-1,
+    .menu-2,
+    .menu-3{
+        &.more::after{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            content: '';
+            border-top: 15px solid transparent;
+            border-left: 15px solid transparent;
+            border-right: 15px solid #ccc;
+        }
+    }
+}
+
+.situation-data-list{
+    padding-bottom: 200px;
+}
+
+.situation-contract-list{
+    li{
+        user-select: none;
+        font-size: 30px;
+        color: #666;
+        @include thinBorder();
+        .content{
+            display: flex;
+            padding: 0;
+            justify-content: space-between;
+            position: relative;
+            height: 80px;
+            line-height: 80px;
+            >div{
+                line-height: 80px;
+                font-size: 32px;
+            }
+        }
+        &.active{
+            background-color: #FFD9D7;
+        }
+    }
+    .active .menu-tool{
+        height: 80px;
+    }
+    .menu-tool{
+        height: 0;
+        padding: 0 30px;
+        background-color: #f2f2f2;
+        display: flex;
+        overflow: hidden;
+        justify-content: space-between;
+        transition: all .2s;
+        >div{
+            font-size: 28px;
+            color: #666;
+            line-height: 80px;
+            &.choose.status0{
+                background-image: url(#{$cdn-path}/images/small_icon_star0.png);
+            }
+            &.choose.status1{
+                background-image: url(#{$cdn-path}/images/small_icon_star1.png);
+            }
+            &.alert{
+                background-image: url(#{$cdn-path}/images/small_icon_caution.png);
+            }
+            &.deal{
+                background-image: url(#{$cdn-path}/images/small_icon_flash.png);
+            }
+            &.quantification{
+                background-image: url(#{$cdn-path}/images/small_icon_robot.png);
+            }
+            background-repeat: no-repeat;
+            background-size: 40px 40px;
+            background-position: 0 20px;
+            >span{
+                padding-left: 50px;
+                font-size: 28px;
+                line-height: 80px;
+            }
+        }
+    }
+
+    .title{
+        width: $menu-title-width;
+        padding-left: 20px;
+    }
+    .value-1{
+        width:  $menu-tab1-width;
+        padding-right: 10px;
+        text-align: right;
+    }
+    .value-2{
+        width: $menu-tab2-width;
+        padding-right: 10px;
+        text-align: right;
+    }
+    .value-3{
+        width: $menu-tab3-width;
+        padding-right: 20px;
+        text-align: right;
+    }
+    .status1{ /* 涨 */
+        .value-1.price,
+        .value-2.changeRate{
+            color: $color-up;
+        }
+    }
+    .status1s{ /* 涨停 */
+        .value-1.price{
+            background-color: $color-up;
+            color: #fff;
+        }
+        .value-2.changeRate{
+            color: $color-up;
+        }
+    }
+    .status0{ /* 跌 */
+        .value-1.price,
+        .value-2.changeRate{
+            color: $color-down;
+        }
+    }
+    .status0s{ /* 跌停 */
+        .value-1.price{
+            background-color: $color-down;
+            color: #fff;
+        }
+        .value-2.changeRate{
+            color: $color-down;
+        }
+    }
+}
+
+.situation-user-add{
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .plus{
+        background: url('#{$cdn-path}/images/small_icon_add.png') top no-repeat;
+        background-size: 100% 100%;
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+    }
+    >span{
+        line-height: 40px;
+        font-size: 28px;
+        color: #666;
+    }
+}
+
+.situation-no-data{
+    text-align: center;
+    .add-button{
+        margin: 200px auto 30px;
+        width: 140px;
+        height: 140px;
+        background: url('#{$cdn-path}/images/icon_add_red.png') top no-repeat;
+        background-size: 100% 100%;
+    }
+    .text{
+        color: #666;
+        font-size: 24px;
+    }
+}
+
+.situation-no-data-main{
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    line-height: 200px;
+    margin: 200px auto 0;
+    color: #333;
+    font-size: 35px;
+}
+
+.situation-bottom-info{
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #fff;
+    /deep/ .menu-cat-list{
+        height: 80px;
+        position: relative;
+        @include thinBorder(top);
+        padding: 0 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        .menu-main{
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            .menu-left{
+                text-align: left;
+                line-height: 80px;
+                width: 50px;
+                padding-left: 10px;
+                color: #bbb;
+            }
+            .menu-right{
+                width: 50px;
+                color: #bbb;
+                text-align: center;
+                line-height: 80px;
+            }
+            .van-icon::before{
+                color: #bbb;
+                font-size: 40px;
+                line-height: 80px;
+            }
+        }
+        .move-area{
+            max-width: 570px;
+            flex: 1;
+            display: flex;
+            overflow-x: auto;
+            >span{
+                line-height: 80px;
+                font-size: 30px;
+                width: 95px;
+                text-align: center;
+                flex-shrink: 0;
+                white-space: nowrap;
+                &.active{
+                    color: $color-up;
+                }
+            }
+        }
+        .right-btn{
+            line-height: 80px;
+            width: 80px;
+            text-align: center;
+            @include thinBorder(left);
+            //box-shadow: 0 0 50px 20px rgba(0,0,0, .05);
+        }
+        .van-icon-plus::before{
+            color: #bbb;
+            font-size: 50px;
+            line-height: 80px;
+        }
+    }
+    .slide-info{
+        background-color: #FFD9D7;
+        height: 80px;
+        line-height: 80px;
+    }
+    .bottom-slide{
+        height: 100%;
+        display: flex;
+        >span{
+            display: block;
+            line-height: 80px;
+            font-size: 30px;
+        }
+        .title{
+            padding-left: 20px;
+            width: $menu-title-width;
+            color: #333;
+        }
+        .tab1{
+            width: $menu-tab1-width;
+            text-align: right;
+            padding-right: 10px;
+            color: #ff1902;
+        }
+        .tab2{
+            width: $menu-tab2-width;
+            text-align: right;
+            padding-right: 10px;
+            color: #ff1902;
+        }
+        .tab3{
+            width: $menu-tab3-width;
+            text-align: right;
+            padding-right: 20px;
+            color: #ff1902;
+        }
+        &.status1{
+            .tab1,
+            .tab2,
+            .tab3{
+                color: $color-up;
+            }
+        }
+        &.status0{
+            .tab1,
+            .tab2,
+            .tab3{
+                color: $color-down;
+            }
+        }
+    }
+}
+
+$chart-setting-lp-width: 220px;
+$chart-setting-rp-width: 530px;
+.situation-chart-setting{
+    display: flex;
+    .left-part{
+        width: $chart-setting-lp-width;
+        border-right: 1PX solid $common-bg-color;
+        background-color: #fff;
+        height: calc(100vh - #{$nav-height});
+        overflow-y: auto;
+        .menu{
+            height: 100px;
+            font-size: 32px;
+            line-height: 100px;
+            color: #333;
+            text-align: center;
+            &.active{
+                background-color: #FF5F51;
+                color: #fff;
+                user-select: none;
+            }
+            &.selected{
+                border: 2PX solid #999;
+            }
+        }
+    }
+    .right-part{
+        flex: 1;
+        height: calc(100vh - #{$nav-height});
+        overflow-y: auto;
+    }
+}
+
+.situation-chart-body{
+    width: $chart-setting-rp-width;
+    .menu-list-tab {
+        display: flex;
+        justify-content: space-between;
+        > div {
+            flex: 1;
+            line-height: 80px;
+            font-size: 30px;
+            text-align: center;
+            color: #333;
+            background-color: #fff;
+
+            &.active {
+                background-color: #FF5F51;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.warn-bottom-tip {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #fff;
+    z-index: 3000;
+    padding: 30px;
+    @include border-top();
+    width: 750px;
+    user-select: none;
+
+    .title {
+        color: #0087FF;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .other {
+        color: #999;
+        font-size: 24px;
+    }
+}
+
+.warning-modify-mask{
+    position: fixed;
+    background-color: rgba(0,0,0,.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3050;
+}
+.warning-modify-panel{
+    position: fixed;
+    background-color: #fff;
+    z-index: 4000;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    height: 200px;
+    margin: 0 auto;
+    bottom: 0;
+    //top: 50%;
+    //transform: translateY(-50%);
+    width: 750px;
+    .title{
+        color: #333;
+        font-size: 28px;
+        text-align: center;
+    }
+    .func-area{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        .text1{
+            font-size: 28px;
+            color: #666;
+            width: 250px;
+        }
+        input{
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 60px;
+            line-height: 40px;
+            border:  1PX solid #eaeaea;
+            padding-left: 20px;
+            width: 240px;
+            background-color: #F2F2F2;
+            font-size: 28px;
+        }
+        .van-button{
+            height: 60px;
+            line-height: 60px;
+            width: 150px;
+            .van-button__text{
+                line-height: 60px;
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+.warning-tab{
+    height: 120px;
+    background-color: #fff;
+    padding: 20px 30px;
+    display: flex;
+    flex: 1;
+    touch-action: none;
+    user-select:none;
+    >div{
+
+        flex: 1;
+        font-size: 28px;
+        color: #333;
+        text-align: center;
+        .l1{
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+            &.sp{
+                font-size: 32px;
+            }
+            touch-action: none;
+            user-select:none;
+        }
+        .l2{
+            touch-action: none;
+            user-select:none;
+            font-size: 28px;
+            &.up{
+                color: $color-up;
+            }
+            &.down{
+                color: $color-down;
+            }
+        }
+    }
+}
+
+$width-1: 200px;
+$width-2: 310px;
+$width-3: 180px;
+
+.warning-bar-wrap{
+    touch-callout:none;
+    position: fixed;
+    top: $nav-height;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 750px;
+    z-index: 999;
+}
+
+.warning-bar {
+    background-color: #f6f6f6;
+    padding: 0 30px;
+    user-select: none;
+
+    > div {
+        color: #999;
+        line-height: 70px;
+        font-size: 24px;
+        float: left;
+
+        &:first-child {
+            width: $width-1;
+        }
+
+        &:nth-child(2) {
+            width: $width-2;
+        }
+
+        &:last-child {
+            padding-right: 30px;
+            text-align: right;
+            width: $width-3;
+        }
+    }
+}
+
+.warning-list .van-cell {
+    padding: 30px;
+    user-select: none;
+
+    .van-cell__title {
+        width: $width-1;
+        flex: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .van-cell__value {
+
+        text-align: left;
+        flex: auto;
+        display: flex;
+
+        > div {
+            &:first-child {
+                width: 65%;
+                font-size: 24px;
+                color: #333;
+                display: flex;
+                align-items: center;
+
+                .desc-text {
+                    font-size: 24px;
+                    line-height: 40px;
+                    display: inline-block;
+                }
+            }
+
+            &:last-child {
+                width: 35%;
+            }
+        }
+    }
+
+    .custom-title {
+        font-size: 28px;
+        width: 100%;
+        color: #333;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    .van-cell__label {
+        width: 100%;
+        text-align: left;
+    }
+
+    .custom-label {
+        font-size: 24px
+    }
+
+    .time-part {
+        display: flex;
+        justify-content: right;
+        flex-direction: column;
+        text-align: right;
+
+        > div {
+            color: #666;
+            font-size: 24px;
+
+            &:first-child {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .van-cell__right-icon {
+        margin-top: 22px;
+        margin-left: 10px;
+    }
+}
+
+.warning-list .function-line {
+    user-select: none;
+    background-color: #f6f6f6;
+    transition: all .3s;
+    overflow: hidden;
+    display: flex;
+    flex: 1;
+    padding: 0 20px;
+    height: 0;
+
+    > div {
+        flex: 1;
+        text-align: center;
+    }
+
+    .item {
+        touch-callout:none;
+        user-select: none;
+        margin: 0 auto;
+        width: 150px;
+        line-height: 80px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        font-size: 28px;
+        color: #666;
+
+        .icon {
+            touch-callout:none;
+            user-select: none;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.se-cat {
+    padding-top: 10px;
+    color: #fff;
+    font-size: 28px;
+}
+
+.se-name {
+    font-size: 30px;
+    padding-top: 5px;
+    color: #FDE543;
+}
+
+.contract-brief-info{
+    position: fixed !important;
+    bottom: 110px;
+    left: 0;
+    right: 0;
+    width: 750px;
+    margin: 0 auto;
+    display:  flex;
+    @include thinBorder(top);
+    >div{
+        flex: 1;
+        width: 50%;
+        position: relative;
+        &:first-child{
+            @include thinBorder(bottom);
+        }
+    }
+    .price-part{
+        padding: 30px 35px 20px 25px;
+        .top{
+            display: flex;
+            justify-content: space-between;
+            >img{
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .value{
+            font-weight: bold;
+            color: $color-main;
+            font-size: 80px;
+        }
+        &.up {
+            .value,
+            .rate{
+                color: $color-main;
+            }
+
+        }
+        &.down{
+            .value,
+            .rate{
+                color: $color-down;
+            }
+        }
+        .rate{
+            padding-top: 45px;
+            color: $color-main;
+            font-size: 32px;
+        }
+    }
+    .right-column{
+        //height: 80px;
+        position: relative;
+        @include thinBorder(left bottom);
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        span{
+            font-size: 30px;
+            display: inline-block;
+            line-height: 40px;
+            color: #666;
+        }
+        .up{
+            color: $color-main;
+            font-size: 30px;
+        }
+        .down{
+            color: $color-down;
+            font-size: 30px;
+        }
+    }
+}
